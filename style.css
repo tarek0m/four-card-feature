@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+:root {
+  /* specs */
+  --top-border: 5px solid;
+  --gap-size-large: 60px;
+  --gap-size-mid: 40px;
+  --gap-size-small: 20px;
+
+  /* colors */
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --grey-500: hsl(234, 12%, 34%);
+  --grey-400: hsl(212, 6%, 44%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-size: clamp(15px, 1vw, 16px);
+  padding: 5rem;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-size-large);
+}
+
+h1 {
+  font-size: clamp(1.5rem, 2vw, 32px);
+}
+
+.hero {
+  width: 100%;
+  max-width: 550px;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.thin-header {
+  font-weight: 200;
+}
+
+.bold-header {
+  font-weight: 600;
+}
+
+.description {
+  font-weight: 200;
+  font-size: clamp(15px, 1vw, 16px);
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-size-mid);
+}
+
+.middle-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-size-mid);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;
+  width: 100%;
+  max-width: 375px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 19px 0px;
+  border-radius: 2%;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.card img {
+  align-self: flex-end;
+  margin-top: var(--gap-size-mid);
+}
+
+.card.supervisor {
+  border-top: var(--top-border) var(--cyan);
+}
+
+.card.builder {
+  border-top: var(--top-border) var(--red);
+}
+
+.card.karma {
+  border-top: var(--top-border) var(--orange);
+}
+
+.card.calculator {
+  border-top: var(--top-border) var(--blue);
+}
+
+/*=== Mobile devices with maximum width 375px ===*/
+
+@media (max-width: 375px) {
+  body {
+    padding: 4rem 2rem;
+  }
+  .hero {
+    padding: 0 1rem;
+  }
+  .cards {
+    flex-direction: column;
+    gap: var(--gap-size-small);
+  }
+  .middle-cards {
+    gap: var(--gap-size-small);
+  }
+  .card {
+    padding: 25px;
+    height: 250px;
+  }
+  .card img {
+    margin-top: 0;
+  }
+}
